@@ -23,6 +23,7 @@ namespace WPFDataTrigger
         public MainWindow()
         {
             InitializeComponent();
+            this.DataContext = new MainViewModel();
         }
     }
 }

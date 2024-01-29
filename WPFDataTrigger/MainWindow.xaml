@@ -17,6 +17,20 @@
             <Setter Property="FontSize" Value="30"></Setter>
             <Setter Property="HorizontalAlignment" Value="Center"></Setter>
             <Setter Property="Margin" Value="10"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding TextProperty}" Value="Red">
+                    <Setter Property="Background" Value="Red"/>
+                    <Setter Property="Foreground" Value="White"/>
+                </DataTrigger >
+                <DataTrigger Binding="{Binding TextProperty}" Value="Orange">
+                    <Setter Property="Background" Value="Orange"/>
+                    <Setter Property="Foreground" Value="White"/>
+                </DataTrigger >
+                <DataTrigger Binding="{Binding TextProperty}" Value="Green">
+                    <Setter Property="Background" Value="Green"/>
+                    <Setter Property="Foreground" Value="White"/>
+                </DataTrigger >
+            </Style.Triggers>
         </Style>
     </Window.Resources>
 
@@ -26,6 +40,7 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <TextBox Grid.Column="0"
+                 Text="{Binding TextProperty, UpdateSourceTrigger=PropertyChanged }"
                  Style="{StaticResource tb}"/>
         <TextBlock Grid.Column="1"
                    Style="{StaticResource tbk}"
